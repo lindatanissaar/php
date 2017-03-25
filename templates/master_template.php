@@ -87,6 +87,11 @@
             width: 100%;
         }
 
+        .image {
+            position: relative;
+            width: 100%; /* for IE 6 */
+        }
+
         h2 {
             position: absolute;
             top: 200px;
@@ -113,6 +118,26 @@
         h2 span:hover {
             font: bold 28px/46px Helvetica, Sans-Serif;
         }
+
+        #btn {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+            background: #212F40;
+            transition: padding 1s;
+            color: white;
+            border-radius: 5px;
+            padding: 15px 35px 15px 35px;
+        }
+
+        #btn:hover {
+            padding: 15px 50px 15px 50px;
+        }
+
+        h2 span:hover {
+            font: bold 28px/46px Helvetica, Sans-Serif;
+
+        }
     </style>
 
 
@@ -133,8 +158,6 @@
     <!-- Main component for a primary marketing message or call to action -->
     <?php if (!file_exists("views/$controller/{$controller}_$action.php")) error_out('The view <i>views/' . $controller . '/' . $controller . '_' . $action . '.php</i> does not exist. Create that file.'); ?>
     <?php @require "views/$controller/{$controller}_$action.php"; ?>
-
-
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
