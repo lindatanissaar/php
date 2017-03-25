@@ -8,7 +8,8 @@
  */
 class users extends Controller
 {
-    public $requires_auth = true;
+    public $requires_auth = false;
+    public $template = 'master';
 
     function index()
     {
