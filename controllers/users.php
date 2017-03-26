@@ -64,4 +64,13 @@ class users extends Controller
         $this->user = get_first("SELECT * FROM users WHERE user_id = '$user_id'");
     }
 
+    function changeLanguage(){
+        $language = $_GET['language'];
+
+
+
+
+    }
+
+
 } 

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Linnu
+ * Date: 26.03.2017
+ * Time: 17:25
+ */
 
 /**
  * Display a fancy error page and quit.
