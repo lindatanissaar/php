@@ -8,8 +8,15 @@
  */
 class users extends Controller
 {
-    public $requires_auth = false;
+    public $requires_auth = true;
     public $template = 'master';
+
+
+    function success()
+    {
+        echo "success";
+    }
+
 
     function index()
     {

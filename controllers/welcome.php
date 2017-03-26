@@ -1,22 +1,22 @@
 <?php namespace Halo;
 
 class welcome extends Controller
+
 {
-
-    function index()
+    public $requires_auth = false;
+    function AJAX_login()
     {
-        $this->users = get_all("SELECT * FROM users");
+        if (isset($_POST["password"]))
+            $password = $_POST["password"];
+
+            $users = query("SELECT user_id FROM users WHERE password = '{$password}'");
+            if(!empty($users['user_id'])){
+
+                $_SESSION['user_id'] = $users['user_id'];
+            }
+
+            exit (empty($users['user_id'])? 'puudub':'success');
     }
 
-    function AJAX_index()
-    {
-        echo "\$_POST:<br>";
-        var_dump($_POST);
-    }
-
-    function POST_index()
-    {
-        echo "\$_POST:<br>";
-        var_dump($_POST);
-    }
 }
+

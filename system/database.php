@@ -90,6 +90,12 @@ function get_first($sql)
     return empty($first_row) ? array() : $first_row;
 }
 
+function query($sql){
+    global $db;
+    $q = mysqli_query($db, $sql) or db_error_out();
+    return $q;
+}
+
 function db_error_out($sql = null)
 {
     global $db;
